@@ -1,0 +1,746 @@
+/* Cool infinite background scrolling animation.
+ * Twitter: @kootoopas
+ */
+/* Exo thin font from Google. */
+@import url("https://fonts.googleapis.com/css?family=Exo:100");
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+body {
+  text-align: center;
+  font-size: 150%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  -webkit-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Opera 12+ */
+  animation: bg-scrolling-reverse 0.92s infinite;
+  /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+.body h1{
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: bold;
+     text-transform: uppercase;
+    background-image: linear-gradient(
+      -225deg,
+      #231557 0%,
+      #44107a 29%,
+      #ff1361 67%,
+      #fff800 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+  }
+  
+  @keyframes textclip {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+header, section {
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  margin: 0;
+  background: linear-gradient(0deg, rgb(108, 233, 255), rgb(0, 140, 255));
+  background-size: 200% 200%;
+  border-radius: 20em;
+  animation: rotateGradient 5s linear infinite;
+  z-index: 1000; /* Add this line to ensure header is on top */
+}
+
+
+.sticky-image {
+  text-align: right;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 600px;
+  height: 100px;
+  z-index: 1000;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  align-items: center;
+  height: 98px;
+  width: 100%;
+  margin: 0;
+  border: 2px solid rgb(47, 0, 255);
+  outline: 1px solid rgba(255, 238, 238, 0.514);
+  outline-offset: -4px;
+  border-radius: 20em;
+  text-align: justify;
+  justify-content: flex-end; /* Align items to the right */
+}
+
+.container {
+  margin: 0 auto;
+  padding: 3rem 1rem 5rem;
+}
+
+/* Main */
+.container2 {
+  display: flex;
+  max-width: 1250px;
+  margin: 0 auto;
+  background: #00e1ffa1;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(255, 249, 249);
+  overflow: hidden;
+  margin-bottom: 1rem; /* Add some space below the profile description */
+  position: relative; /* Add this */
+  z-index: 2; /* Add this */
+}
+
+.p.profile-description {
+  padding: 15px;
+  text-align: left; /* Align text to the left */
+}
+
+.profile-description h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.profile-description p {
+  color: #fdf6f6;
+  font-size: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: "Teko", sans-serif;
+  text-align: left;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-variant-caps: all-petite-caps;
+  line-height: 1;
+  margin-bottom: -20px;
+  /* Add text-shadow for stroke effect */
+  text-shadow: 
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+html {
+  box-sizing: content-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: content-box;
+}
+
+.clip {
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: fixed;
+  width: 1px;
+}
+
+.svg--source {
+  display: none;
+}
+
+.svg--icon {
+  width: 2rem;
+  height: 2rem;
+  display: block;
+  fill: currentColor;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  position: relative;
+  z-index: 999;
+}
+.connect {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.share {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  background-color: #f0f0f0;
+}
+
+/* Adjust hover effects for smaller icons */
+.share:hover,
+.share:focus {
+  transform: scale(1.1);
+}
+
+/* Adjust specific social media colors */
+.instagram:hover, .instagram:focus { box-shadow: 0 0 15px 0 #ed00cd; }
+.github:hover, .github:focus { box-shadow: 0 0 15px 0 #000000; }
+.pinterest:hover, .pinterest:focus { box-shadow: 0 0 15px 0 #bd081c; }
+.youtube:hover, .youtube:focus { box-shadow: 0 0 15px 0 #cd201f; }
+.facebook:hover, .facebook:focus { box-shadow: 0 0 15px 0 #0051ff; }
+.google:hover, .google:focus { box-shadow: 0 0 15px 0 #dd4b39; }
+
+.profile-photo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-photo img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.973);
+}
+
+main {
+  max-width: 1280px;
+  margin-top: 1.5rem; /* Increase space above the main content */
+}
+
+main .main_title {
+  margin-bottom: 1rem; /* Add space below the main title */
+}
+
+main .main_title p {
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(17, 0, 255);
+}
+
+      .main_title h2{
+        font-weight: 400;
+        font-style: normal;
+        font-weight: bold;
+           text-transform: uppercase;
+          background-image: linear-gradient(
+            -225deg,
+            #231557 0%,
+            #44107a 29%,
+            #ff1361 67%,
+            #fff800 100%
+          );
+          background-size: auto auto;
+          background-clip: border-box;
+          background-size: 200% auto;
+          color: #fff;
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: textclip 3s linear infinite;
+          display: inline-block;
+      }
+
+main ul {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+main ul li figure.card {
+  background-color: #4400ff6e;
+  border: solid 1px rgb(0, 0, 0);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow:  0 4px 8px #ffffff;
+}
+
+main ul li figure.card .card_header {
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
+}
+
+main ul li figure.card .card_header .card_image {
+  width: 110px;
+  height: 128px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+main ul li figure.card .card_header .card_image img {
+  margin-top: -12px;
+}
+
+main ul li figure.card .card_header .card_description {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+main ul li figure.card .card_header .card_description {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+main ul li figure.card .card_header .card_description span:last-child {
+  color: rgb(255, 255, 255);
+  font-family: monospace;
+}
+
+main ul li figure.card .card_content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  margin-top: 20px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(0, 195, 255);
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.footer-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.footer-info, .footer-social {
+  text-align: left;
+  flex: 1;
+}
+
+.footer-info h5, .footer-social h5 {
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.footer-info p {
+  margin: 5px 0;
+  font-size: 12px;
+}
+
+.footer-social a {
+  display: block;
+  margin: 2px 0;
+  font-size: 16px;
+  text-decoration: none;
+  color: #1100ff;
+}
+
+.footer-social a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+
+/* Mobile (base styles) */
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 14px;
+    padding-bottom: 150px;
+  }
+
+  header, section, .box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    border-radius: 25px;
+    z-index: 2000; 
+  }
+
+  .container {
+    padding: 1rem 0.5rem 3rem;
+  }
+
+  .container2 {
+    margin-bottom: 70px; /* Increase this value to make room for the wrapper */
+  }
+
+  .profile-photo {
+    padding: 10px;
+  }
+
+  .profile-photo img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .design {
+    max-width: 200px;
+    width: 100%;
+  }
+
+  .sticky-image {
+    max-width: 120px;
+    width: 100%;
+    height: auto;
+  }
+
+  .Link-profile {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+  }
+
+  .Link-profile p, 
+  .Link-profile a {
+    font-size: 10px;
+  }
+
+  .about a, .angkatan a {
+    font-size: 25px;
+    text-align: right;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .profile-description p {
+    padding-right: 10px;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 5px;
+    margin-bottom: 10px;
+  }
+
+  .profile-description p {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  main .main_title {
+    margin-top: 40px; /* Add space above the main title */
+  }
+
+  main .main_title h2 {
+    font-size: 24px;
+  }
+
+  main ul {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+    margin: 0;
+  }
+
+  main ul li figure.card .card_header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main ul li figure.card .card_header .card_image {
+    width: 100px;
+    height: 100px;
+  }
+
+  main ul li figure.card .card_content {
+    margin-top: 10px;
+  }
+
+  .wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-bottom: 50px;
+  }
+
+  main {
+    padding-top: 60px; /* Increase this value to push content down */
+    position: relative;
+    z-index: 1000;
+  }
+
+  .container2 {
+    margin-bottom: 100px;
+  }
+
+  footer {
+    padding: 3px 5px;
+  }
+
+  footer {
+    margin-top: 10px; /* Add space above the footer to accommodate the wrapper */
+  }
+}
+
+  .footer-container {
+    flex-direction: row; /* Change to row for better space utilization */
+    align-items: center;
+  }
+
+  .footer-info, .footer-social {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .footer-info h5, .footer-social h5 {
+    font-size: 14px;
+  }
+
+  .footer-info p, .footer-social a {
+    font-size: 12px;
+  }
+
+  /* Media query untuk perangkat dengan layar sangat kecil */
+@media screen and (max-width: 480px) {
+  .about a, .angkatan a {
+    font-size: 10px; /* Ukuran paling kecil untuk perangkat sangat kecil */
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  body {
+    font-size: 18px;
+  }
+
+  header, section {
+    height: 80px;
+  }
+
+  .design {
+    width: 400px;
+  }
+
+  .sticky-image {
+    width: 250px;
+    height: auto;
+  }
+
+  .box {
+    height: 80px;
+  }
+
+  .Link-profile p, .Link-profile a {
+    font-size: 16px;
+  }
+
+  .about a, .angkatan a {
+    text-align: right;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  main ul li figure.card .card_header .card_image {
+    width: 110px;
+    height: 128px;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  
+  main ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  main .main_title h2 {
+    font-size: 28px;
+  }
+
+  main .main_title span {
+    font-size: 18px;
+  }
+  .footer-container {
+    max-width: 90%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    padding-bottom: 80px; /* Adjust based on your footer height */
+  }
+
+  .footer-container {
+    max-width: 1200px;
+  }
+}
+
+
+/* Laptop */
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 20px;
+  }
+
+  header, section {
+    height: 100px;
+  }
+
+  .sticky-image {
+    width: 400px;
+    height: auto;
+  }
+
+  .about a, .angkatan a {
+    width: auto; /* Changed from 0px to auto */
+    font-size: 25px;
+    padding-right: 20px;
+    padding-left: 0;
+    text-align: right;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .box {
+    height: 100px;
+  }
+
+  .Link-profile {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .Link-profile p, .Link-profile a {
+    font-size: 18px;
+  }
+
+  main ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  main .main_title h2 {
+    font-size: 32px;
+  }
+
+  main .main_title span {
+    font-size: 20px;
+  }
+
+  header figure img {
+    width: 14rem;
+  }
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Align items to the right */
+}
+
+.Link-profile {
+  display: flex;
+  justify-content: flex-start; /* Align items to the right */
+  align-items:flex-start
+}
+
+.about a:hover, .angkatan a:hover {
+  color: #3700ff;
+}
+
+.about a, .angkatan a {
+  width: auto; /* Changed from 0px to auto */
+  font-size: 18px;
+  padding-right: 20px;
+  padding-left: 0;
+  text-align: right;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#about {
+  scroll-margin-top: 100px;
+  scroll-behavior: smooth;
+}
+
+#angkatan {
+  scroll-behavior: inherit;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 767px) {
+  .music-toggle {
+    top: 5px;
+    right: 5px;
+  }
+}
+
+.form {
+  display: inline-block;
+}
