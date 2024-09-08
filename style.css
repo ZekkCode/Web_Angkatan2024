@@ -138,6 +138,19 @@ header, section {
   padding: 3rem 1rem 5rem;
 }
 
+.error-message {
+  color: #ff0000;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  background-color: #ffeeee;
+  border-radius: 5px;
+  margin: 20px auto;
+  max-width: 80%;
+  list-style-type: none;
+}
+
+
 /* Main */
 .container2 {
   display: flex;
@@ -167,7 +180,7 @@ header, section {
   font-size: 25px;
   padding-left: 15px;
   padding-right: 15px;
-  font-family: "Teko", sans-serif;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: left;
   font-optical-sizing: auto;
   font-weight: bold;
@@ -269,7 +282,23 @@ html {
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.973);
 }
+.search-container {
+  margin-bottom: 20px;
+}
 
+#searchInput {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #00e1ff;
+  border-radius: 5px;
+  outline: none;
+}
+
+#searchInput:focus {
+  border-color: #0051ff;
+}
 main {
   max-width: 1280px;
   margin-top: 1.5rem; /* Increase space above the main content */
@@ -435,6 +464,7 @@ footer {
   }
 
   .container2 {
+    padding-bottom: 30px;
     margin-bottom: 70px; /* Increase this value to make room for the wrapper */
   }
 
@@ -563,10 +593,14 @@ footer {
     font-size: 12px;
   }
 
-  /* Media query untuk perangkat dengan layar sangat kecil */
+  /* Media query*/
 @media screen and (max-width: 480px) {
   .about a, .angkatan a {
     font-size: 10px; /* Ukuran paling kecil untuk perangkat sangat kecil */
+  }
+  #searchInput {
+    font-size: 12px;
+    padding: 6px;
   }
 }
 
@@ -625,6 +659,11 @@ footer {
   .footer-container {
     max-width: 90%;
   }
+
+  .container2 {
+    padding-bottom: 50px;
+  }
+  
 }
 
 @media screen and (min-width: 1024px) {
@@ -709,6 +748,40 @@ footer {
 
 .about a:hover, .angkatan a:hover {
   color: #3700ff;
+}
+
+.about a, .angkatan a {
+  width: auto; /* Changed from 0px to auto */
+  font-size: 18px;
+  padding-right: 20px;
+  padding-left: 0;
+  text-align: right;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#about {
+  scroll-margin-top: 100px;
+  scroll-behavior: smooth;
+}
+
+#angkatan {
+  scroll-behavior: inherit;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 767px) {
+  .music-toggle {
+    top: 5px;
+    right: 5px;
+  }
+}
+
+.form {
+  display: inline-block;
 }
 
 .about a, .angkatan a {
